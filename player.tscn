@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ws2yu48mdc5m"]
+
+[ext_resource type="Texture2D" uid="uid://dv73oaeyo1gfp" path="res://Sprites/Untitled 03-01-2024 04-19-32.png" id="1_vfgts"]
+[ext_resource type="Texture2D" uid="uid://c8o6p8r4673a3" path="res://Sprites/vf.png" id="2_07msx"]
+[ext_resource type="Script" path="res://Scripts/movement.gd" id="3_bmt27"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkw8r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vfgts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_07msx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+position = Vector2(212, 321)
+scale = Vector2(0.305, 0.305)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rkw8r")
+script = ExtResource("3_bmt27")
