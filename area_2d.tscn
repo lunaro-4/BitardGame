@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct2cpjgd1noos"]
+
+[ext_resource type="Texture2D" uid="uid://dv73oaeyo1gfp" path="res://Sprites/Untitled 03-01-2024 04-19-32.png" id="1_4jmci"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_alp4x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4jmci")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(178, 390)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.315, 0.315)
+sprite_frames = SubResource("SpriteFrames_alp4x")
