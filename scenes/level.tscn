@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://dqb17cc7h53m2"]
+[gd_scene load_steps=4 format=3 uid="uid://dqb17cc7h53m2"]
+
+[ext_resource type="Texture2D" uid="uid://ryh6hfhu3chn" path="res://icon.svg" id="1_q81er"]
+[ext_resource type="PackedScene" uid="uid://duhds52qepow0" path="res://scenes/enemy.tscn" id="2_gfgn1"]
+[ext_resource type="PackedScene" uid="uid://cv3bkemxu34br" path="res://scenes/player.tscn" id="3_rgxhc"]
 
 [node name="Level" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(456, 120)
+texture = ExtResource("1_q81er")
+
+[node name="Enemy" parent="." instance=ExtResource("2_gfgn1")]
+position = Vector2(60, 67)
+rotation = 2.16944
+
+[node name="player" parent="." instance=ExtResource("3_rgxhc")]
+position = Vector2(264, 351)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bitard Game"
-run/main_scene="res://scenes/player.tscn"
+run/main_scene="res://scenes/level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,6 +24,10 @@ window/size/viewport_height=508
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray()
 
 [input]
 

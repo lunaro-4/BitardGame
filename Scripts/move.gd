@@ -24,3 +24,7 @@ func player_muvement(delta):
 		velocity.y = 0
 		
 	move_and_slide()
+	
+func _process(delta):
+	#print(str(round(position.x)) + "  " + str(round(position.y)))
+	await get_tree().create_timer(2).timeout
