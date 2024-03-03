@@ -1,20 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqb17cc7h53m2"]
+[gd_scene load_steps=7 format=3 uid="uid://dqb17cc7h53m2"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_41sj6"]
-[ext_resource type="Texture2D" uid="uid://ryh6hfhu3chn" path="res://icon.svg" id="1_q81er"]
 [ext_resource type="PackedScene" uid="uid://duhds52qepow0" path="res://scenes/enemy.tscn" id="2_gfgn1"]
 [ext_resource type="PackedScene" uid="uid://cv3bkemxu34br" path="res://scenes/player.tscn" id="3_rgxhc"]
+[ext_resource type="PackedScene" uid="uid://cplmj7asbgexe" path="res://scenes/collision_block.tscn" id="4_efg3e"]
+[ext_resource type="PackedScene" uid="uid://b0u3bktliowg6" path="res://scenes/collision_block_movable.tscn" id="5_pfbtg"]
+[ext_resource type="Script" path="res://scenes/move_and_collide.gd" id="6_o4181"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_41sj6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(456, 120)
-texture = ExtResource("1_q81er")
-
 [node name="Enemy" parent="." instance=ExtResource("2_gfgn1")]
 position = Vector2(60, 67)
 rotation = 2.16944
+scale = Vector2(0.465, 0.465)
 
 [node name="player" parent="." instance=ExtResource("3_rgxhc")]
 position = Vector2(264, 351)
+
+[node name="StaticBlock" parent="." instance=ExtResource("4_efg3e")]
+position = Vector2(414, 121)
+
+[node name="MovableBody2D" parent="." instance=ExtResource("5_pfbtg")]
+position = Vector2(70, 109)
+script = ExtResource("6_o4181")
