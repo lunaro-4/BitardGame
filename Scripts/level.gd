@@ -10,3 +10,11 @@ func _ready():
 func _process(delta):
 
 	pass
+
+
+func _on_exit_to_menu_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_exit_pressed():
+	get_tree().quit()

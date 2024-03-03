@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://duhds52qepow0"]
+[gd_scene load_steps=6 format=3 uid="uid://duhds52qepow0"]
 
 [ext_resource type="Texture2D" uid="uid://bqlwcw4u3kjn7" path="res://resources (placeholder)/graphics/player/player.png" id="1_aqnsn"]
-[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_idpoe"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_idpoe"]
 [ext_resource type="Texture2D" uid="uid://d0d3rwf2kpcs0" path="res://resources (placeholder)/graphics/projectiles/blue.png" id="2_l7cuc"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6teo5"]
+radius = 32.0
+height = 128.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dkqdj"]
+radius = 75.8947
+
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_idpoe")
 
 [node name="EnemyImage" type="Sprite2D" parent="."]
@@ -14,3 +23,10 @@ texture = ExtResource("1_aqnsn")
 [node name="ProjImage" type="Sprite2D" parent="EnemyImage"]
 position = Vector2(18, -216)
 texture = ExtResource("2_l7cuc")
+
+[node name="CollisionGun" type="CollisionShape2D" parent="."]
+position = Vector2(26, -68)
+shape = SubResource("CapsuleShape2D_6teo5")
+
+[node name="CollisionBody" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dkqdj")

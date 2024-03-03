@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqb17cc7h53m2"]
 
-[ext_resource type="Script" path="res://scenes/level.gd" id="1_41sj6"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_41sj6"]
 [ext_resource type="PackedScene" uid="uid://duhds52qepow0" path="res://scenes/enemy.tscn" id="2_gfgn1"]
 [ext_resource type="PackedScene" uid="uid://cv3bkemxu34br" path="res://scenes/player.tscn" id="3_rgxhc"]
 [ext_resource type="PackedScene" uid="uid://cplmj7asbgexe" path="res://scenes/collision_block.tscn" id="4_efg3e"]
 [ext_resource type="PackedScene" uid="uid://b0u3bktliowg6" path="res://scenes/collision_block_movable.tscn" id="5_pfbtg"]
-[ext_resource type="Script" path="res://scenes/move_and_collide.gd" id="6_o4181"]
+[ext_resource type="Script" path="res://Scripts/move_and_collide.gd" id="6_o4181"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_41sj6")
@@ -24,3 +24,18 @@ position = Vector2(414, 121)
 [node name="MovableBody2D" parent="." instance=ExtResource("5_pfbtg")]
 position = Vector2(70, 109)
 script = ExtResource("6_o4181")
+
+[node name="ExitToMenu" type="Button" parent="."]
+offset_left = 429.0
+offset_top = 1.0
+offset_right = 535.0
+offset_bottom = 32.0
+text = "Exit to menu"
+
+[node name="Exit" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Exit"
+
+[connection signal="pressed" from="ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

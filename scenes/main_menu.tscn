@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt0d7i1cwm3uw"]
+
+[ext_resource type="Script" path="res://Scripts/StartGame.gd" id="1_bw8df"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_bw8df")
+
+[node name="Start" type="Button" parent="."]
+offset_left = 171.0
+offset_top = 150.0
+offset_right = 317.41
+offset_bottom = 208.225
+text = "New Game"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 139.0
+offset_top = 300.0
+offset_right = 339.0
+offset_bottom = 350.0
+text = "EXIT"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
