@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-const speed = 400
+const speed: float = 400
 
 func _physics_process(delta):
-	player_muvement(delta)
+	player_movement(delta)
 
-func player_muvement(delta):
+func player_movement(delta):
 	
 	if Input.is_action_pressed("right"):
 		velocity.x = +speed
@@ -23,7 +23,7 @@ func player_muvement(delta):
 		velocity.x = 0
 		velocity.y = 0
 		
-	move_and_slide()
+	move_and_collide(velocity * delta)
 	
 func _process(delta):
 	#print(str(round(position.x)) + "  " + str(round(position.y)))
