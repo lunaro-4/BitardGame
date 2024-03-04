@@ -25,7 +25,7 @@ func _process(delta):
 script = ExtResource("1_41sj6")
 
 [node name="FollowingProj" parent="." instance=ExtResource("2_p0xs1")]
-position = Vector2(88, 354)
+position = Vector2(180, 349)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_y4sar")
@@ -36,19 +36,22 @@ rotation = 2.16944
 scale = Vector2(0.465, 0.465)
 
 [node name="player" parent="." instance=ExtResource("3_rgxhc")]
-position = Vector2(259, 377)
+position = Vector2(426, 484)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.64, 0.64)
 
 [node name="StaticBlock" parent="." instance=ExtResource("4_efg3e")]
-position = Vector2(414, 121)
+position = Vector2(572, 145)
 collision_layer = 3
 collision_mask = 3
 script = SubResource("GDScript_di2lu")
 
 [node name="ExitToMenu" type="Button" parent="."]
-offset_left = 429.0
-offset_top = 1.0
-offset_right = 535.0
-offset_bottom = 32.0
+offset_left = 699.0
+offset_top = 4.0
+offset_right = 805.0
+offset_bottom = 35.0
 text = "Exit to menu"
 
 [node name="Exit" type="Button" parent="."]
