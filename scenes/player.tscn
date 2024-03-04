@@ -1,52 +1,49 @@
-[gd_scene load_steps=20 format=3 uid="uid://cv3bkemxu34br"]
+[gd_scene load_steps=19 format=3 uid="uid://cv3bkemxu34br"]
 
 [ext_resource type="Script" path="res://Scripts/move.gd" id="1_1u6yy"]
 [ext_resource type="Texture2D" uid="uid://c8o6p8r4673a3" path="res://Sprites/vf.png" id="2_1lw75"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb1fd"]
-size = Vector2(46, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_82g0i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l1jd"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3bj0d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtsj2"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_moso4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_883c5"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r6f3j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uddys"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4qew2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg7y0"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvkx7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxa8a"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sgbgu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6vvk"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(64, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vbnr0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8am24"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(96, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v3aqy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgg5a"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fx7yk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1s12"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vh3wn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p25kt"]
 atlas = ExtResource("2_1lw75")
 region = Rect2(64, 64, 32, 32)
 
@@ -54,82 +51,90 @@ region = Rect2(64, 64, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_82g0i")
+"texture": SubResource("AtlasTexture_8l1jd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3bj0d")
+"texture": SubResource("AtlasTexture_xtsj2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_moso4")
+"texture": SubResource("AtlasTexture_883c5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r6f3j")
+"texture": SubResource("AtlasTexture_uddys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4qew2")
+"texture": SubResource("AtlasTexture_fg7y0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bvkx7")
+"texture": SubResource("AtlasTexture_xxa8a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sgbgu")
+"texture": SubResource("AtlasTexture_m6vvk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vbnr0")
+"texture": SubResource("AtlasTexture_8am24")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v3aqy")
+"texture": SubResource("AtlasTexture_bgg5a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fx7yk")
+"texture": SubResource("AtlasTexture_q1s12")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vh3wn")
+"texture": SubResource("AtlasTexture_p25kt")
 }],
 "loop": true,
 "name": &"PlayerAnimUp",
-"speed": 10.0
+"speed": 20.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb1fd"]
+size = Vector2(54, 45)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1b0o"]
-size = Vector2(29, 23)
+size = Vector2(50, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0u2y"]
-size = Vector2(27, 23)
+size = Vector2(54, 28.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgscq"]
-size = Vector2(24.5, 5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_24be4"]
-size = Vector2(20, 3)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyis2"]
+size = Vector2(52, 104)
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(1, 2)
 script = ExtResource("1_1u6yy")
 
-[node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_sb1fd")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -1)
+rotation = 1.5708
 scale = Vector2(6.95312, 4.14063)
 sprite_frames = SubResource("SpriteFrames_3rvxb")
 animation = &"PlayerAnimUp"
 autoplay = "PlayerAnimUp"
-frame_progress = 0.286407
+frame = 3
+frame_progress = 0.266507
 
-[node name="LeftHand" type="CollisionShape2D" parent="."]
-position = Vector2(-38, 1)
+[node name="CollisionShapes" type="Node2D" parent="."]
+
+[node name="BodyAndLegs" type="CollisionShape2D" parent="CollisionShapes"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_sb1fd")
+disabled = true
+
+[node name="LeftHand" type="CollisionShape2D" parent="CollisionShapes"]
+position = Vector2(-1, -38)
 shape = SubResource("RectangleShape2D_d1b0o")
+disabled = true
 
-[node name="RightHand" type="CollisionShape2D" parent="."]
-position = Vector2(36.5, -2.5)
+[node name="RightHand" type="CollisionShape2D" parent="CollisionShapes"]
+position = Vector2(-1, 34.75)
 shape = SubResource("RectangleShape2D_c0u2y")
+disabled = true
 
-[node name="LegLeft" type="CollisionShape2D" parent="."]
-position = Vector2(-10.25, -16)
-shape = SubResource("RectangleShape2D_lgscq")
+[node name="WholeBodyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kyis2")
 
-[node name="LegRight" type="CollisionShape2D" parent="."]
-position = Vector2(11, 16.5)
-shape = SubResource("RectangleShape2D_24be4")
+[node name="TestTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="TestTimer" to="." method="_on_timer_timeout"]

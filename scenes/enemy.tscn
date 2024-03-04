@@ -17,7 +17,8 @@ collision_mask = 2
 script = ExtResource("1_idpoe")
 
 [node name="EnemyImage" type="Sprite2D" parent="."]
-position = Vector2(6, -34)
+position = Vector2(29, -3)
+rotation = 1.5708
 texture = ExtResource("1_aqnsn")
 
 [node name="ProjImage" type="Sprite2D" parent="EnemyImage"]
@@ -25,7 +26,8 @@ position = Vector2(18, -216)
 texture = ExtResource("2_l7cuc")
 
 [node name="CollisionGun" type="CollisionShape2D" parent="."]
-position = Vector2(26, -68)
+position = Vector2(66, 18)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6teo5")
 
 [node name="CollisionBody" type="CollisionShape2D" parent="."]

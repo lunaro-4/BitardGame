@@ -1,14 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqb17cc7h53m2"]
+[gd_scene load_steps=8 format=3 uid="uid://dqb17cc7h53m2"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_41sj6"]
 [ext_resource type="PackedScene" uid="uid://duhds52qepow0" path="res://scenes/enemy.tscn" id="2_gfgn1"]
+[ext_resource type="PackedScene" uid="uid://cclrqui8o61ab" path="res://scenes/following_proj.tscn" id="2_p0xs1"]
 [ext_resource type="PackedScene" uid="uid://cv3bkemxu34br" path="res://scenes/player.tscn" id="3_rgxhc"]
+[ext_resource type="Script" path="res://Scripts/following_proj.gd" id="3_y4sar"]
 [ext_resource type="PackedScene" uid="uid://cplmj7asbgexe" path="res://scenes/collision_block.tscn" id="4_efg3e"]
-[ext_resource type="PackedScene" uid="uid://b0u3bktliowg6" path="res://scenes/collision_block_movable.tscn" id="5_pfbtg"]
-[ext_resource type="Script" path="res://Scripts/move_and_collide.gd" id="6_o4181"]
+
+[sub_resource type="GDScript" id="GDScript_di2lu"]
+script/source = "extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_41sj6")
+
+[node name="FollowingProj" parent="." instance=ExtResource("2_p0xs1")]
+position = Vector2(88, 354)
+script = ExtResource("3_y4sar")
 
 [node name="Enemy" parent="." instance=ExtResource("2_gfgn1")]
 position = Vector2(60, 67)
@@ -20,10 +38,7 @@ position = Vector2(264, 351)
 
 [node name="StaticBlock" parent="." instance=ExtResource("4_efg3e")]
 position = Vector2(414, 121)
-
-[node name="MovableBody2D" parent="." instance=ExtResource("5_pfbtg")]
-position = Vector2(70, 109)
-script = ExtResource("6_o4181")
+script = SubResource("GDScript_di2lu")
 
 [node name="ExitToMenu" type="Button" parent="."]
 offset_left = 429.0
@@ -37,5 +52,6 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Exit"
 
+[connection signal="follow_player" from="." to="FollowingProj" method="_on_level_follow_player"]
 [connection signal="pressed" from="ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
