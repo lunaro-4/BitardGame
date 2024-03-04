@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqb17cc7h53m2"]
+[gd_scene load_steps=10 format=3 uid="uid://dqb17cc7h53m2"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_41sj6"]
 [ext_resource type="Script" path="res://Scripts/pause.gd" id="2_567k6"]
@@ -10,6 +10,20 @@
 
 [sub_resource type="GDScript" id="GDScript_di2lu"]
 script/source = "extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_jbb01"]
+script/source = "extends CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -59,6 +73,34 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Exit"
 
+[node name="Node2" type="CanvasLayer" parent="."]
+process_mode = 2
+script = SubResource("GDScript_jbb01")
+
+[node name="Mainmenu" type="Button" parent="Node2"]
+offset_left = 172.0
+offset_top = 160.0
+offset_right = 367.0
+offset_bottom = 225.0
+text = "В главное меню"
+
+[node name="Exit" type="Button" parent="Node2"]
+offset_left = 166.0
+offset_top = 312.0
+offset_right = 347.0
+offset_bottom = 433.0
+text = "ВЫХОД"
+
+[node name="Entergame" type="Button" parent="Node2"]
+offset_left = 168.0
+offset_top = 227.0
+offset_right = 349.0
+offset_bottom = 307.0
+text = "Продолжить"
+
 [connection signal="follow_player" from="." to="FollowingProj" method="_on_level_follow_player"]
 [connection signal="pressed" from="ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Node2/Mainmenu" to="Node" method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="Node2/Exit" to="Node" method="_on_exit_pressed"]
+[connection signal="pressed" from="Node2/Entergame" to="Node" method="_on_entergame_pressed"]

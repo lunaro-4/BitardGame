@@ -1,5 +1,7 @@
 extends Node
 
+@onready var pause_menu = $"../Node2"
+
 var get_paused: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +14,19 @@ func _process(delta):
 		get_paused = !get_paused
 	if get_paused == true:
 		get_tree().paused = true
-		get_tree().change_scene_to_file("res://scenes/EscSet.tscn") 
+		pause_menu.show()
 	else:
 		get_tree().paused = false
-		
+		pause_menu.hide()
+
+
+func _on_mainmenu_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_exit_pressed():
+	get_tree().quit()
+
+
+func _on_entergame_pressed():
+	get_paused = !get_paused
