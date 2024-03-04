@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const speed: float = 400
 var can_print: bool = true
+@onready var _animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -15,6 +16,7 @@ func player_movement(delta):
 	if Input.is_action_pressed("right"):
 		velocity.x = +speed
 		velocity.y = 0
+		_animated_sprite.play("PlayerAnimUp")
 		if can_print: # пробую таймеры
 			$TestTimer.start()
 			#print("im in")
@@ -22,16 +24,19 @@ func player_movement(delta):
 	elif Input.is_action_pressed("left"):
 		velocity.x = -speed
 		velocity.y = 0
+		_animated_sprite.play("PlayerAnimUp")
 	elif Input.is_action_pressed("up"):
 		velocity.x = 0
 		velocity.y = -speed
+		_animated_sprite.play("PlayerAnimUp")
 	elif Input.is_action_pressed("down"):
 		velocity.x = 0
 		velocity.y = +speed
+		_animated_sprite.play("PlayerAnimUp")
 	else:
 		velocity.x = 0
 		velocity.y = 0
-		
+		_animated_sprite.stop()
 	move_and_slide()
 	
 func look_at_coursor():

@@ -202,6 +202,7 @@ sprite_frames = SubResource("SpriteFrames_3rvxb")
 animation = &"PlayerAnimUp"
 autoplay = "PlayerAnimUp"
 frame_progress = 0.286407
+speed_scale = 1.2
 
 [node name="LeftHand" type="CollisionShape2D" parent="."]
 position = Vector2(-38, 1)
@@ -226,6 +227,5 @@ one_shot = true
 scale = Vector2(6.95312, 4.14063)
 sprite_frames = SubResource("SpriteFrames_13vo2")
 animation = &"PlayerAnimUp"
-autoplay = "PlayerAnimUp"
 
 [connection signal="timeout" from="TestTimer" to="." method="_on_timer_timeout"]
