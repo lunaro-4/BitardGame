@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqb17cc7h53m2"]
+[gd_scene load_steps=8 format=3 uid="uid://dqb17cc7h53m2"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_41sj6"]
-[ext_resource type="Script" path="res://Scripts/pause.gd" id="2_567k6"]
 [ext_resource type="PackedScene" uid="uid://duhds52qepow0" path="res://scenes/enemy.tscn" id="2_gfgn1"]
 [ext_resource type="PackedScene" uid="uid://cclrqui8o61ab" path="res://scenes/following_proj.tscn" id="2_p0xs1"]
 [ext_resource type="PackedScene" uid="uid://cv3bkemxu34br" path="res://scenes/player.tscn" id="3_rgxhc"]
@@ -23,15 +22,9 @@ func _process(delta):
 "
 
 [node name="Level" type="Node2D"]
-process_mode = 1
 script = ExtResource("1_41sj6")
 
-[node name="Node" type="Node" parent="."]
-process_mode = 3
-script = ExtResource("2_567k6")
-
 [node name="FollowingProj" parent="." instance=ExtResource("2_p0xs1")]
-process_mode = 1
 position = Vector2(88, 354)
 script = ExtResource("3_y4sar")
 
