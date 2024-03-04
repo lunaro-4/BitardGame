@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_41sj6"]
 [ext_resource type="PackedScene" uid="uid://duhds52qepow0" path="res://scenes/enemy.tscn" id="2_gfgn1"]
 [ext_resource type="PackedScene" uid="uid://cclrqui8o61ab" path="res://scenes/following_proj.tscn" id="2_p0xs1"]
-[ext_resource type="PackedScene" uid="uid://cv3bkemxu34br" path="res://scenes/player.tscn" id="3_rgxhc"]
+[ext_resource type="PackedScene" uid="uid://cw3qaoa4iyisd" path="res://scenes/player.tscn" id="3_rgxhc"]
 [ext_resource type="Script" path="res://Scripts/following_proj.gd" id="3_y4sar"]
 [ext_resource type="PackedScene" uid="uid://cplmj7asbgexe" path="res://scenes/collision_block.tscn" id="4_efg3e"]
 
@@ -26,6 +26,8 @@ script = ExtResource("1_41sj6")
 
 [node name="FollowingProj" parent="." instance=ExtResource("2_p0xs1")]
 position = Vector2(88, 354)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_y4sar")
 
 [node name="Enemy" parent="." instance=ExtResource("2_gfgn1")]
@@ -34,10 +36,12 @@ rotation = 2.16944
 scale = Vector2(0.465, 0.465)
 
 [node name="player" parent="." instance=ExtResource("3_rgxhc")]
-position = Vector2(264, 351)
+position = Vector2(259, 377)
 
 [node name="StaticBlock" parent="." instance=ExtResource("4_efg3e")]
 position = Vector2(414, 121)
+collision_layer = 3
+collision_mask = 3
 script = SubResource("GDScript_di2lu")
 
 [node name="ExitToMenu" type="Button" parent="."]

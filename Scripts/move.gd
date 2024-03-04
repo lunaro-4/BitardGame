@@ -34,8 +34,14 @@ func player_movement(delta):
 		
 	move_and_slide()
 	
-func _process(delta):
+func look_at_coursor():
 	look_at(get_global_mouse_position())
+	rotation_degrees += 90
+	
+
+func _process(delta):
+	look_at_coursor()
+
 	
 	#print(str(round(position.x)) + "  " + str(round(position.y)))
 	#await get_tree().create_timer(2).timeout

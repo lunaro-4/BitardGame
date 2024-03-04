@@ -4,12 +4,13 @@ extends Node2D
 
 signal follow_player
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	pass 
 
 func rotate_subject_to_object(subject : Node2D, object : Node2D):
 	subject.look_at(object.get_global_position())
+	subject.rotation_degrees += 90
 	
 func get_subject_to_object_direction(subject : Node2D, object : Node2D) -> Vector2:
 	return (object.get_global_position() - subject.get_global_position()).normalized()
