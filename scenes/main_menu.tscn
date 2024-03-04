@@ -3,13 +3,14 @@
 [ext_resource type="Script" path="res://Scripts/StartGame.gd" id="1_bw8df"]
 
 [node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_bw8df")
 
 [node name="Start" type="Button" parent="."]
-offset_left = 171.0
-offset_top = 150.0
-offset_right = 317.41
-offset_bottom = 208.225
+offset_left = 139.0
+offset_top = 120.0
+offset_right = 345.0
+offset_bottom = 219.0
 text = "New Game"
 
 [node name="Exit" type="Button" parent="."]
