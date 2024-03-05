@@ -57,3 +57,9 @@ func _process(delta):
 func _on_timer_timeout():
 	can_print =true
 	pass # Replace with function body.
+
+
+
+
+
+

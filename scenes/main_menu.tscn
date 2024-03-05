@@ -1,24 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://bt0d7i1cwm3uw"]
+[gd_scene load_steps=7 format=3 uid="uid://bt0d7i1cwm3uw"]
 
 [ext_resource type="Script" path="res://Scripts/StartGame.gd" id="1_bw8df"]
+[ext_resource type="Texture2D" uid="uid://dnrxqmkiqfkvi" path="res://Sprites/Mini GUI Elements/sample Button Start.png" id="2_7ytfj"]
+[ext_resource type="Texture2D" uid="uid://bxt2b3a0s47hf" path="res://Sprites/Clouds/Clouds 4/1.png" id="2_c8rgl"]
+[ext_resource type="Texture2D" uid="uid://k4guxdt18phi" path="res://Sprites/Mini GUI Elements/Sample Button Exit.png" id="3_bprao"]
+[ext_resource type="Texture2D" uid="uid://opkhmdkfmlb3" path="res://Sprites/Clouds/Clouds 4/3.png" id="3_p23jt"]
+[ext_resource type="Texture2D" uid="uid://c0uf8gqb7up3q" path="res://Sprites/Clouds/Clouds 4/4.png" id="4_m4ops"]
 
 [node name="MainMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_bw8df")
 
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(438, 285)
+scale = Vector2(2.05, 2.05)
+texture = ExtResource("2_c8rgl")
+
+[node name="BackSkyes1" type="Sprite2D" parent="."]
+position = Vector2(409, 316)
+scale = Vector2(1.81, 1.81)
+texture = ExtResource("3_p23jt")
+
+[node name="BackSkyes2" type="Sprite2D" parent="."]
+position = Vector2(688, 338)
+scale = Vector2(1.78, 1.78)
+texture = ExtResource("4_m4ops")
+
 [node name="Start" type="Button" parent="."]
-offset_left = 139.0
-offset_top = 120.0
-offset_right = 345.0
-offset_bottom = 219.0
-text = "New Game"
+offset_left = 296.0
+offset_top = 132.0
+offset_right = 502.0
+offset_bottom = 231.0
+icon = ExtResource("2_7ytfj")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 139.0
-offset_top = 300.0
-offset_right = 339.0
-offset_bottom = 350.0
-text = "EXIT"
+offset_left = 301.0
+offset_top = 310.0
+offset_right = 501.0
+offset_bottom = 427.0
+icon = ExtResource("3_bprao")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
