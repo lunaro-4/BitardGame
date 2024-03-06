@@ -1,11 +1,11 @@
 [gd_resource type="TileSet" load_steps=4 format=3 uid="uid://c544rhagclmma"]
 
-[ext_resource type="Texture2D" uid="uid://rj85uyese5ji" path="res://Sprites/Textures-16.png" id="1_hxi2h"]
+[ext_resource type="Texture2D" uid="uid://rj85uyese5ji" path="res://Sprites/Textures-16.png" id="1_ekb1q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wlw78"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ldmm"]
-texture = ExtResource("1_hxi2h")
+texture = ExtResource("1_ekb1q")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
