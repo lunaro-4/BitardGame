@@ -13,30 +13,22 @@ func follow_mouse(_delta):
 
 
 func player_movement(_delta):
+	velocity.x = 0
+	velocity.y = 0
 	if Input.is_action_pressed("right"):
-		velocity.x = +speed
-		velocity.y = 0
-		_animated_sprite.play("PlayerAnimUp")
-		if can_print: # пробую таймеры
-			$TestTimer.start()
-			#print("im in")
-			can_print = false
-	elif Input.is_action_pressed("left"):
-		velocity.x = -speed
-		velocity.y = 0
-		_animated_sprite.play("PlayerAnimUp")
-	elif Input.is_action_pressed("up"):
-		velocity.x = 0
-		velocity.y = -speed
-		_animated_sprite.play("PlayerAnimUp")
-	elif Input.is_action_pressed("down"):
-		velocity.x = 0
-		velocity.y = +speed
-		_animated_sprite.play("PlayerAnimUp")
+		velocity.x +=speed
+	if Input.is_action_pressed("left"):
+		velocity.x -=speed
+	if Input.is_action_pressed("up"):
+		velocity.y -=speed
+	if Input.is_action_pressed("down"):
+		velocity.y +=speed
+		
+	if abs(velocity.x) + abs(velocity.y) == 0:
+			_animated_sprite.stop()
 	else:
-		velocity.x = 0
-		velocity.y = 0
-		_animated_sprite.stop()
+			_animated_sprite.play("PlayerAnimUp")
+
 	move_and_slide()
 	
 func look_at_coursor():
