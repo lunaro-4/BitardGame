@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/smart_enemy.gd" id="1_0xnqm"]
 [ext_resource type="Texture2D" uid="uid://b6qakmjcmysa5" path="res://Sprites/takelime.png" id="1_3l75c"]
-[ext_resource type="Script" path="res://Scripts/NavigationAgent2D.gd" id="3_ojux8"]
+[ext_resource type="PackedScene" uid="uid://bselw8ieny17t" path="res://scenes/pathfinding_logic.tscn" id="4_libhl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qmj6m"]
 radius = 46.1736
@@ -19,12 +19,4 @@ texture = ExtResource("1_3l75c")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qmj6m")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
-script = ExtResource("3_ojux8")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.4
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="PathfindingLogic" parent="." instance=ExtResource("4_libhl")]

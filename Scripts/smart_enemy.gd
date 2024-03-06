@@ -5,24 +5,28 @@ const speed = 200
 
 @export var player : Node2D
 
-@onready var nav_agent = $NavigationAgent2D as NavigationAgent2D
+#@onready var nav_agent = $NavigationAgent2D as NavigationAgent2D
+@onready var pathfinder = $PathfindingLogic
+@onready var direction = pathfinder.target_path_direction
 
+func _ready():
+	pathfinder.target = player
+	pathfinder.pathfinding_init()
+	
 
 
 func _physics_process(_delta : float):
-	var dir = to_local(nav_agent.get_next_path_position()).normalized()
-	velocity = dir * speed
+	direction = pathfinder.target_path_direction
+	velocity = direction * speed
 	move_and_slide()
 	
-func makepath():
-	nav_agent.target_position = player.global_position
 
-func _on_timer_timeout():
-	makepath()
-
-
-func _on_timer_2_timeout():
-	print(velocity)
-	#print(dir)
-	print(nav_agent.get_next_path_position())
+# debug func
+#func _on_timer_timeout():
+	#print(velocity)
+	#print(direction)
+	##print(nav_agent.get_next_path_position())
 	
+
+
+

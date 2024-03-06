@@ -2199,7 +2199,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 "
 
@@ -2213,7 +2213,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 "
 
@@ -2271,6 +2271,11 @@ player = NodePath("../player")
 process_mode = 2
 script = SubResource("GDScript_jbb01")
 
+[node name="Sprite2D" type="Sprite2D" parent="Node2"]
+position = Vector2(436, 490)
+scale = Vector2(1.59, 1.59333)
+texture = ExtResource("9_ca5hu")
+
 [node name="Mainmenu" type="Button" parent="Node2"]
 offset_left = 236.0
 offset_top = 175.0
@@ -2300,11 +2305,6 @@ icon = ExtResource("11_tvq2p")
 flat = true
 icon_alignment = 1
 expand_icon = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2"]
-position = Vector2(436, 490)
-scale = Vector2(1.59, 1.59333)
-texture = ExtResource("9_ca5hu")
 
 [connection signal="follow_player" from="." to="FollowingProj" method="_on_level_follow_player"]
 [connection signal="body_entered" from="FollowingProj" to="." method="_on_following_proj_body_entered"]

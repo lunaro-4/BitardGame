@@ -18,7 +18,7 @@ func get_subject_to_object_direction(subject : Node2D, object : Node2D) -> Vecto
 	return (object.get_global_position() - subject.get_global_position()).normalized()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	rotate_subject_to_object($Enemy, $player)
 	var to_player_direction = get_subject_to_object_direction($FollowingProj, $player)
 	follow_player.emit(to_player_direction)

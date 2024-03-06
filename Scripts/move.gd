@@ -8,11 +8,11 @@ func _physics_process(delta):
 	player_movement(delta)
 
 
-func follow_mouse(delta):
+func follow_mouse(_delta):
 	pass
 
 
-func player_movement(delta):
+func player_movement(_delta):
 	if Input.is_action_pressed("right"):
 		velocity.x = +speed
 		velocity.y = 0
@@ -44,7 +44,7 @@ func look_at_coursor():
 	rotation_degrees += 90
 	
 
-func _process(delta):
+func _process(_delta):
 	look_at_coursor()
 
 	

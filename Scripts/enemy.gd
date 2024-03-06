@@ -9,7 +9,7 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_dead: bool = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	pass
 	
 func _process(delta):
