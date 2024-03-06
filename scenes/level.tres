@@ -1,0 +1,8 @@
+[gd_resource type="NavigationPolygon" format=3 uid="uid://by8c5arkhk0n3"]
+
+[resource]
+vertices = PackedVector2Array(-415, -218, -33, -219, -34, -201, -89, -201, -100, -125, -419, 35, -40, 33, -35, -125, 275, -147, 273, -181, 272, -209, 1160, -201, 1188, 281, -14, -145, -14, -181, 294, 285, 1176, 480, -159, 480, 15, 289, -38, 279, -146, 111, -43, 111)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(8, 9, 10, 11, 12), PackedInt32Array(8, 13, 14, 9), PackedInt32Array(15, 8, 12, 16), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(19, 18, 17), PackedInt32Array(19, 17, 20, 21)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-430, 46, -31, 43, -23, -230, -425, -228), PackedVector2Array(-156, 101, -34, 102, -28, 271, 16, 279, 284, 275, 262, -220, 1170, -211, 1198, 280, 1186, 490, -170, 491), PackedVector2Array(-79.977, -190.736, 307.604, -190.736, 296.325, -138.085, -88.1797, -135.105)])
+parsed_geometry_type = 0
+source_geometry_group_name = &"navigation_polygon_source_group"

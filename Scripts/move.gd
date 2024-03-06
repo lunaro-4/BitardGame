@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed: float = 150
+const speed: float = 300
 var can_print: bool = true
 @onready var _animated_sprite = $AnimatedSprite2D
 

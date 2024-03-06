@@ -56,6 +56,8 @@ func pathfinding_init():
 	start_pathfinding()
 	makepath()
 
+
+
 func _ready():
 	pass 
 
