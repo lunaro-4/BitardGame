@@ -2240,12 +2240,12 @@ collision_layer = 8
 collision_mask = 7
 script = ExtResource("3_y4sar")
 
-[node name="Enemy" parent="." instance=ExtResource("2_gfgn1")]
+[node name="StaticEnemy" parent="." instance=ExtResource("2_gfgn1")]
 position = Vector2(60, 67)
 rotation = 2.16944
 scale = Vector2(0.465, 0.465)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 4
 motion_mode = 1
 wall_min_slide_angle = 0.0
 
@@ -2264,7 +2264,8 @@ script = SubResource("GDScript_di2lu")
 
 [node name="SmartEnemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_o3gkf")]
 position = Vector2(-206, -20)
-collision_mask = 6
+collision_layer = 2
+collision_mask = 5
 player = NodePath("../player")
 
 [node name="Node2" type="CanvasLayer" parent="."]
