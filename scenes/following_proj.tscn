@@ -8,6 +8,8 @@ radius = 22.561
 [node name="FollowingProj" type="RigidBody2D"]
 mass = 0.3
 gravity_scale = 0.0
+max_contacts_reported = 1000
+contact_monitor = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
@@ -15,3 +17,4 @@ texture = ExtResource("1_ymlgt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ca02m")
+disabled = true

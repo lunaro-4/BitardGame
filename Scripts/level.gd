@@ -26,3 +26,12 @@ func _process(delta):
 		
 	
 		
+
+
+func _on_following_proj_body_entered(body):
+	if body.is_in_group("player"):
+		print("Player reached!")
+		queue_free()
+	else:
+		print("Touch!")
+	pass # Replace with function body.
