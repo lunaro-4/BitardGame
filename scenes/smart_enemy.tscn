@@ -31,15 +31,20 @@ shape = SubResource("CircleShape2D_qmj6m")
 [node name="PathfindingLogic" parent="." instance=ExtResource("4_libhl")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_c0glk")]
+max_health = 2
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_mw1bi")]
-collision_mask = 7
+collision_mask = 2
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
 shape = SubResource("CircleShape2D_l8wcn")
 
 [node name="HitBoxComponent" parent="." instance=ExtResource("6_aepr4")]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
 shape = SubResource("CircleShape2D_iidxy")
+
+[connection signal="on_death" from="HealthComponent" to="." method="_on_health_component_on_death"]
+[connection signal="on_health_decrease" from="HealthComponent" to="." method="_on_health_component_on_health_decrease"]

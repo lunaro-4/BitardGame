@@ -1,9 +1,9 @@
-class_name HealthComponent extends Node2D
+class_name HealthComponent extends Node
 
 
 
 @export var max_health : int
-@export var start_health: float =  max_health
+@export var start_health: float = 0
 @export var alive : bool = true
 var current_health : float = start_health
 
@@ -14,7 +14,7 @@ signal on_health_decrease
 func decrease(damage):
 	current_health -= damage
 	on_health_decrease.emit()
-	if current_health < 0:
+	if current_health <= 0:
 		alive = false
 		on_death.emit()
 	pass
@@ -28,6 +28,8 @@ func increase(heal):
 
 
 func _ready():
+	if start_health == 0:
+		current_health =max_health
 	pass 
 
 

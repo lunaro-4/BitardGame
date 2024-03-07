@@ -22,3 +22,14 @@ func _physics_process(_delta : float):
 
 
 
+
+
+func _on_health_component_on_death():
+	print("im ded lol")
+	queue_free()
+	pass # Replace with function body.
+
+
+func _on_health_component_on_health_decrease():
+	print("im hurt")
+	pass # Replace with function body.

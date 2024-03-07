@@ -7,7 +7,4 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_b41dl")
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
