@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://cw3qaoa4iyisd"]
+[gd_scene load_steps=34 format=3 uid="uid://cw3qaoa4iyisd"]
 
 [ext_resource type="Script" path="res://Scripts/move.gd" id="1_2oxps"]
 [ext_resource type="Texture2D" uid="uid://c8o6p8r4673a3" path="res://Sprites/vf.png" id="2_m6uag"]
+[ext_resource type="PackedScene" uid="uid://laivrmt2olyg" path="res://CustomComponents/hit_box_component.tscn" id="3_xfedj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sb1fd"]
 size = Vector2(46, 28)
@@ -188,8 +189,12 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bn8cj"]
+radius = 142.088
+
 [node name="player" type="CharacterBody2D"]
 position = Vector2(1, 2)
+motion_mode = 1
 script = ExtResource("1_2oxps")
 
 [node name="Body" type="CollisionShape2D" parent="."]
@@ -224,3 +229,13 @@ shape = SubResource("RectangleShape2D_24be4")
 scale = Vector2(6.95312, 4.14063)
 sprite_frames = SubResource("SpriteFrames_13vo2")
 animation = &"PlayerAnimUp"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bn8cj")
+
+[node name="HitBoxComponent" parent="." instance=ExtResource("3_xfedj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+shape = SubResource("CircleShape2D_bn8cj")

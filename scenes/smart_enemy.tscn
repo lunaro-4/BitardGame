@@ -1,11 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7p3muc5ewibn"]
+[gd_scene load_steps=10 format=3 uid="uid://b7p3muc5ewibn"]
 
 [ext_resource type="Script" path="res://Scripts/smart_enemy.gd" id="1_0xnqm"]
 [ext_resource type="Texture2D" uid="uid://b6qakmjcmysa5" path="res://Sprites/takelime.png" id="1_3l75c"]
+[ext_resource type="PackedScene" uid="uid://cj6bda8y1k831" path="res://CustomComponents/health_component.tscn" id="4_c0glk"]
 [ext_resource type="PackedScene" uid="uid://bselw8ieny17t" path="res://scenes/pathfinding_logic.tscn" id="4_libhl"]
+[ext_resource type="PackedScene" uid="uid://cuad5o64p42de" path="res://CustomComponents/hurt_box_component.tscn" id="5_mw1bi"]
+[ext_resource type="PackedScene" uid="uid://laivrmt2olyg" path="res://CustomComponents/hit_box_component.tscn" id="6_aepr4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qmj6m"]
 radius = 46.1736
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8wcn"]
+radius = 69.0652
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iidxy"]
+radius = 34.5254
 
 [node name="SmartEnemy" type="CharacterBody2D"]
 motion_mode = 1
@@ -20,3 +29,17 @@ texture = ExtResource("1_3l75c")
 shape = SubResource("CircleShape2D_qmj6m")
 
 [node name="PathfindingLogic" parent="." instance=ExtResource("4_libhl")]
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_c0glk")]
+
+[node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_mw1bi")]
+collision_mask = 7
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
+shape = SubResource("CircleShape2D_l8wcn")
+
+[node name="HitBoxComponent" parent="." instance=ExtResource("6_aepr4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+shape = SubResource("CircleShape2D_iidxy")

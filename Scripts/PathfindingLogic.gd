@@ -24,7 +24,7 @@ func _ready():
 @export var target : Node2D
 
 # Выход для пути (куда должна двигаться сущность)
-@export var target_path_direction : Vector2
+@export var target_path_vector : Vector2
 
 # Задаем названия для локальных нодов
 
@@ -37,7 +37,7 @@ func _ready():
 	
 func makepath():
 	nav_agent.target_position = target.global_position
-	target_path_direction = to_local(nav_agent.get_next_path_position()).normalized()
+	target_path_vector = to_local(nav_agent.get_next_path_position()).normalized()
 
 
 # Обновляет путь, частота регулируется настройками таймера
